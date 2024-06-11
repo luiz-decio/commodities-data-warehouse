@@ -1,0 +1,6 @@
+2024-06-11 16:37:30.720 | INFO     | extract:get_commodities_data_all:33 - 3 rows extracted.
+2024-06-11 16:37:30.765 | INFO     | extract:get_commodities_data_all:34 - --- 0.9097979068756104 seconds ---
+2024-06-11 16:37:30.792 | INFO     | transform:merge_data:34 - 27 final rows transformed.
+2024-06-11 16:37:30.794 | INFO     | transform:merge_data:35 - --- 0.9354455471038818 seconds ---
+2024-06-11 16:37:30.850 | INFO     | __main__:dw_create:23 - Data Warehouse successfully updated.
+2024-06-11 16:37:30.855 | INFO     | __main__:dw_create:24 - --- 0.9965856075286865 seconds ---

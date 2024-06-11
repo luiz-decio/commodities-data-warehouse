@@ -3,11 +3,11 @@ import yfinance as yf
 from loguru import logger
 import time
 
+logger.add("src/logs/commodities_ETL_{time}.log")
 start_time = time.time()
 
 # Define the commodities codes
 commodities = ["CL=F", "GC=F", "SI=F"] # Crude Oil, Gold, Silver
-logger.add("src/logs/extract_{time}.log")
 
 def get_commodities_data(code, period = '5d', interval = '1d'):
     """
@@ -30,7 +30,7 @@ def get_commodities_data_all(commodities):
         commodities_data = get_commodities_data(code)
         all_data.append(commodities_data)
 
-    logger.info(f'\n{all_data}')
+    logger.info(f'{len(all_data)} rows extracted.')
     logger.info("--- %s seconds ---" %(time.time() - start_time))
     
     return pd.concat(all_data)
