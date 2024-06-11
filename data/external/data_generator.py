@@ -5,7 +5,7 @@ from datetime import datetime
 
 comodities_list = ["CL=F", "GC=F", "SI=F"]
 ref_day = (datetime.now().date())
-df_final = None
+df_generated_data = None
 
 for n in range(10):
 
@@ -21,9 +21,9 @@ for n in range(10):
         }
         df = pd.DataFrame(data=data, index=[0])
 
-        if df_final is None:
-            df_final = df 
+        if df_generated_data is None:
+            df_generated_data = df 
         else: 
-            df_final = pd.concat([df_final, df])
+            df_generated_data = pd.concat([df_generated_data, df])
 
-df_final.to_csv("comodities_sell.csv", index=False)
+df_generated_data.to_csv("comodities_sell.csv", index=False)

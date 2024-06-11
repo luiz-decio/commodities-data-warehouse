@@ -7,7 +7,7 @@ start_time = time.time()
 
 # Define the commodities codes
 commodities = ["CL=F", "GC=F", "SI=F"] # Crude Oil, Gold, Silver
-logger.add("file_{time}.log")
+logger.add("src/logs/extract_{time}.log")
 
 def get_commodities_data(code, period = '5d', interval = '1d'):
     """
@@ -16,7 +16,7 @@ def get_commodities_data(code, period = '5d', interval = '1d'):
     """
     ticker = yf.Ticker(code)
     data = ticker.history(period, interval)
-    data['symbol'] = code
+    data['code'] = code
 
     return data
     
